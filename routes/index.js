@@ -5,5 +5,6 @@ const router =express.Router()
 
 
 router.get('/',homeController.home)
+router.use('/upload',require('./upload'))
 
 module.exports = router

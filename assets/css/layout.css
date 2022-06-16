@@ -1,0 +1,5 @@
+body {
+  background-color: #b8dada; }
+  body main {
+    height: 100%;
+    overflow: auto; }

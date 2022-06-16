@@ -1,0 +1,15 @@
+#header{
+    margin:-5px;
+    height:55px;
+    background-color: rgb(240, 243, 196);
+    display: flex;
+    justify-content: space-between;
+    #links-div{
+        padding:12px;
+        a{
+            padding:3px;
+            margin: auto;
+            text-decoration: none;
+        }
+    }
+}
