@@ -5,8 +5,10 @@ const DB      = require('./config/mongoose')
 const expressEjsLayouts = require('express-ejs-layouts')
 const mongoose = require('mongoose')
 const sassMiddleware =require('node-sass-middleware')
-
-
+const session  = require('express-session')
+const passport = require('passport')
+const passportLocal =require('./config/passport_local_strategy')
+const MongoStore = require('connect-mongo')
 /*<- MIDDLEWARES ->*/
 
 //using express an an app
@@ -34,6 +36,30 @@ app.use(sassMiddleware({
 //extract styles and scripts from sub pages into the layout
    app.set('layout extractStyles',true)
    app.set('layout extractScripts',true)
+//middleware for using express session
+  app.use(session({
+    name:'csvskilltest',
+    secret:'csvuploaderandviewer',
+    saveUninitialized:false,
+    resave:false,
+    cookie:{
+      maxAge:(1000*60*50)
+    },
+    store: MongoStore.create({
+      mongoUrl:'mongodb://localhost/csv_development',
+      autoRemove:'disabled'
+      },
+    function(err){
+      console.log(err ||'Connected to mongostore db');
+      }
+    )
+  }))
+//middleware for passport local strategy
+  app.use(passport.initialize())
+  app.use(passport.session())
+
+//middleware for saving the users information in cookies
+  app.use(passport.setAuthenticatedUser)
 
 
 //middleware for using routes

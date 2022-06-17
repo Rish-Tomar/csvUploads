@@ -39,5 +39,13 @@ module.exports.userCreate=(req,res)=>{
 module.exports.createSession=(req,res)=>{
     // create session
     console.log('create session')
-    return res.redirect('back')
+    return res.redirect('/')
+}
+
+module.exports.destroySession = (req,res)=>{
+    //using logout function provided by passport
+    req.logout((err)=>{
+        if(err){console.log('error',err);return;}
+    });
+    return res.redirect('/')
 }
