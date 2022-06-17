@@ -1,0 +1,41 @@
+#sign-up-div{
+    background-color: rgba(206, 207, 195, 0.856);
+    border-radius: 10px;
+    margin:auto;
+    margin-top: 30px;
+    width:25%;
+    text-align: center;
+    #user_sign_up{
+        padding: 10%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        #user_sign_in_form{
+            padding: 5%;
+            display: flex;
+            flex-direction: column;
+            input{
+                margin:2px;
+                border:none;
+                height:30px;
+                padding: 5px;
+                border-bottom: 1px solid black;
+                background-color: rgb(222, 228, 235);
+            }
+            #submit-btn{
+                margin:auto;
+                margin-top: 20px;
+                background-color: rgb(228, 172, 69);
+                height:30px;
+                border-radius: 5px;
+                border: none;
+                width:30%;                
+            }
+            #submit-btn:hover{
+                background-color: rgb(69, 164, 228);
+            }
+        }
+    }
+    
+
+}

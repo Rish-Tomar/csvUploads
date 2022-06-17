@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="/css/signup.css">
+<div id="sign-up-div">
+    
+    <div id="user_sign_up">
+        <p id=""><strong>Register</strong></p>
+        ----------------
+        <form action="/users/create" method="post" id="user_sign_up_form">           
+            <input type="text"      name="name" id="user-name"     placeholder="Enter Your Name">
+            <input type="email"     name="email" id="user-email"    placeholder="Enter your email ID">
+            <input type="password"  name="password" id="user-pword"    placeholder="Enter Password">
+            <input type="password"  name="confirm_password" id="user-re-pword" placeholder="Re-enter password">
+            <input type="submit" value="Register" id="submit-btn">
+        </form>
+        <p id="for-sign-in">Already A user &nbsp;<a href="/users/sign-in">Login</a>  </p>
+    </div>
+   
+</div>
