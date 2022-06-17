@@ -20,6 +20,8 @@ app.use(sassMiddleware({
     outputStyle: 'extended',
     prefix: '/css'
 }))
+//middleware for url requests and sessions
+  app.use(express.urlencoded({extended: false}))
 //middlewares for ejs views
   app.set('view engine','ejs')
   app.set('views',path.join(__dirname,'views'))

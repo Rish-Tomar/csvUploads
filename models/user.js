@@ -2,11 +2,11 @@ const mongoose =require('mongoose')
 
 
 const userSchema = mongoose.Schema({
-    username:{
+    name:{
         type:String,
         required:true
     },
-    userid:{
+    email:{
         type:String,
         required:true,
         unique:true
