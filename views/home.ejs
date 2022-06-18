@@ -1,1 +1,26 @@
-<h5>this is <%- title %></h5>
+<link rel="stylesheet" href="/css/home.css">
+
+<h3>List of CSV Files Uploaded</h3>
+
+<div id="table-div">
+    <table id="table">
+        <thead id="table-header">
+            <th>Uploaded by</th>
+            <th>File Contains</th>
+            <th>Options</th>
+        </thead>
+        <tbody id="table-body">
+            <% csvFilesData.forEach( function(data){ %>
+                <tr>
+                    <td><%= data.user.name %></td>
+                    <td><%= data.typeofdata %></td>
+                    <% if((locals.user) && (locals.user.id == data.user.id)) { %>
+                    <td><a href="/csvdetails/?fileid=<%=data.id%>">Open File</a></td>
+                    <% } else{%>
+                    <td> Unauthorised</td>
+                    <% } %></5>
+                </tr>
+            <% }) %>
+        </tbody>        
+    </table>
+</div>

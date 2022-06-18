@@ -1,0 +1,14 @@
+#upload-outer-div{
+    margin-top: 3%;
+    #innerdiv{
+        display: flex;
+        justify-content: space-around;
+        form{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    #upload-form{
+        margin: auto;
+    }
+}

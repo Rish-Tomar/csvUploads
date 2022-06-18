@@ -1,11 +1,15 @@
-<h5><%= title %></h5>
 
-
-<div>
-    <form enctype="multipart/form-data"  method="post">
-        <input type="file" name="csv" id="">
-        <input type="button" value="Upload">
-    </form>
+<link rel="stylesheet" href="/css/upload.css">
+<div id="upload-outer-div">
+    <div id="innerdiv">
+        <form action="/upload/file/?id=<%=user.id%>" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" id="file" accept=".csv">
+            <input type="text" 
+                   name="typeofdata" 
+                   placeholder="What data does this file contain" 
+                   >
+            <input type="submit" value="Submit" onclick="fileValidator()">
+        </form>
+    </div>
+<script src="../assets/js/upload.js"></script>
 </div>
-
-<!-- create a logic to show sign in link if not logged in and message " you need to login first to upoad csv" -->

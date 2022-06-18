@@ -5,6 +5,7 @@ const router =express.Router()
 
 
 router.get('/',homeController.home)
+router.get('/csvdetails',homeController.showCsvDetails)
 router.use('/upload',require('./upload'))
 router.use('/users',require('./user'))
 

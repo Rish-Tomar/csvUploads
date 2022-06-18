@@ -3,7 +3,9 @@ const express =require('express')
 const passport = require('passport')
 const router =express.Router()
 
-router.get('/',passport.checkAuthentication,uploadController.upload)
+router.get('/upload-home',passport.checkAuthentication,uploadController.upload)
+
+router.post('/file',uploadController.uploadFile)
 
 
 module.exports = router

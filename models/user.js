@@ -14,7 +14,13 @@ const userSchema = mongoose.Schema({
     password:{
         type:String,
         required:true
-    }
+    },
+    csvfile:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:'CsvData'
+        }
+    ]
 },
 {
     timestamps:true
