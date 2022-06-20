@@ -11,7 +11,7 @@ const passport = require('passport')
 const passportLocal =require('./config/passport_local_strategy')
 const MongoStore = require('connect-mongo')
 const env=require('./config/environment')
-const PORT = env.PORT
+const PORT = env.PORT || 8000
 /*<- MIDDLEWARES ->*/
 
 //using express an an app
@@ -75,5 +75,5 @@ app.use(sassMiddleware({
 /*<- Server listining ->*/
 app.listen(PORT,(err)=>{
     if(err){console.log('error occured',err)}
-    console.log(`server running on port ${8000}`)
+    console.log(`server running on port ${PORT}`)
 })
