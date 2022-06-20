@@ -32,6 +32,9 @@ app.use(sassMiddleware({
   app.use(express.static('./assets'))
 
   app.use(expressEjsLayouts)
+// extract style and scripts from sub pages into the layout
+  app.set('layout extractStyles', true);
+  app.set('layout extractScripts', true);
 
 //extract styles and scripts from sub pages into the layout
    app.set('layout extractStyles',true)

@@ -1,4 +1,4 @@
-function fileValidator(){
+function fileValidator(data){
     var fileInput = document.getElementById('file');    
     var filePath = fileInput.value;
     var allowedExtensions =

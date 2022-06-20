@@ -1,13 +1,28 @@
+<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 <h1>CSV details</h1>
-
-<div>
-    <table>
-        <thead>
+<!-- <link rel="stylesheet" href="/css/csv_details.css"> -->
+<div id="search-box-div">
+   <form>
+    <p>Search record from table</p>
+    <select id="select_option">
+        <option value="default">Select Attribute</option>
+        <% for (let i=0;i < keys.length;i++){%>
+            <option value="<%= keys[i]%>"><%= keys[i]%></option>
+            <% }%>
+            
+    </select>
+    <input type="text" placeholder="Search Record" id="entered-text" name="searchitem" onkeyup="searchHandler('<%=fileid%>')" >
+</form>
+</div>
+<div id="outer-div">
+    <table id="table">
+        <thead id="table-header">
             <% keys.forEach(key =>{ %>
-                <th><%= key %></th>
+                <th id="headerrow"><%= key %></th>
             <% }) %>
         </thead>
-        <tbody>
+        <tbody id="table-body">
             <% data.forEach(record =>{ %>
                 <tr>
                     <% for (let i=0;i < keys.length;i++){%>
@@ -20,3 +35,5 @@
     </table>
 
 </div>
+
+<script src="/js/csvdetails.js"></script>
