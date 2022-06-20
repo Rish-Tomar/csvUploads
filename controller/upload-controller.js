@@ -19,7 +19,7 @@ module.exports.uploadFile =(req,res)=>{
         }
         if(req.file){
             csvDatabase.create({
-                file:csvDatabase.filePath+"/"+req.file.filename,
+                file:csvDatabase.filePath+"//"+req.file.filename,
                 typeofdata:req.body.typeofdata,
                 user:req.query.id
             })
