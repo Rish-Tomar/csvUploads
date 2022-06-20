@@ -21,6 +21,7 @@ module.exports.showCsvDetails = async (req,res)=>{
     
     console.log(csvfile.id)
     const filepath = csvfile.file
+    console.log(filepath)
 
     const jsonData = await csvv().fromFile(filepath)
     const keys     = Object.keys(jsonData[0])
