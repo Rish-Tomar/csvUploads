@@ -1,4 +1,5 @@
 /*<- imports  ->*/
+require('dotenv').config()
 const express = require('express')
 const path    = require('path')
 const DB      = require('./config/mongoose')
@@ -9,6 +10,8 @@ const session  = require('express-session')
 const passport = require('passport')
 const passportLocal =require('./config/passport_local_strategy')
 const MongoStore = require('connect-mongo')
+const env=require('./config/environment')
+const PORT = env.PORT
 /*<- MIDDLEWARES ->*/
 
 //using express an an app
@@ -42,7 +45,7 @@ app.use(sassMiddleware({
 //middleware for using express session
   app.use(session({
     name:'csvskilltest',
-    secret:'csvuploaderandviewer',
+    secret:env.session_cookie_key,
     saveUninitialized:false,
     resave:false,
     cookie:{
@@ -70,7 +73,7 @@ app.use(sassMiddleware({
 
 
 /*<- Server listining ->*/
-app.listen(8000,(err)=>{
+app.listen(PORT,(err)=>{
     if(err){console.log('error occured',err)}
     console.log(`server running on port ${8000}`)
 })

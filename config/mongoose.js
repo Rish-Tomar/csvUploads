@@ -1,5 +1,6 @@
+const env = require('../config/environment')
 const mongoose= require('mongoose')
-mongoose.connect(`mongodb://localhost/csv_development`)
+mongoose.connect(`mongodb://localhost/${env.DB}`)
 
 const db=mongoose.connection
 

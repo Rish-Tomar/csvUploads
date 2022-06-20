@@ -60,8 +60,3 @@ function newRenderResult(newFileData){
         })  
     
 }
-
-
-$(document).ready(function() {
-    $('#table').DataTable();
-} );
