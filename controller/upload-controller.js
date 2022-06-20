@@ -17,10 +17,10 @@ module.exports.uploadFile =(req,res)=>{
             console.log('unsupported file type')
             return res.redirect('back')
         }
-        console.log(csvDatabase.filePath+"//"+req.file.filename)
+        console.log(csvDatabase.filePath+"/"+req.file.filename)
         if(req.file){
             csvDatabase.create({
-                file:csvDatabase.filePath+"//"+req.file.filename,
+                file:csvDatabase.filePath+"/"+req.file.filename,
                 typeofdata:req.body.typeofdata,
                 user:req.query.id
             })
