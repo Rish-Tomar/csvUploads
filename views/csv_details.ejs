@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
 <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 <h1>CSV details</h1>
-<!-- <link rel="stylesheet" href="/css/csv_details.css"> -->
+<link rel="stylesheet" href="<%= assetPath('css/csv_details.css') %>">
 <div id="search-box-div">
    <form>
     <p>Search record from table</p>
@@ -36,7 +36,7 @@
 
 </div>
 
-<script src="/js/csvdetails.js"></script>
+<script src="<%= assetPath('js/csvdetails.js') %>"></script>
 <script>
     $(document).ready(function() {
     $('#table').DataTable({

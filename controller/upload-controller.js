@@ -22,7 +22,7 @@ module.exports.uploadFile =(req,res)=>{
             req.flash('error','Unsupported file format, use .csv')
             return res.redirect('back')
         }
-        console.log(csvDatabase.filePath+"/"+req.file.filename)
+        console.log("filepathis",csvDatabase.filePath+"/"+req.file.filename)
         if(req.file){
             csvDatabase.create({
                 file:csvDatabase.filePath+"/"+req.file.filename,

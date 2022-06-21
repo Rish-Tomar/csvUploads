@@ -20,6 +20,8 @@ const flashMiddleware = require('./config/flashMiddleware')
 //using express an an app
 const app= express()
 
+//middleware to insert asssetpath function from helper function inside config
+  require('./config/views_assets_helper')(app)
 //sass middleware 
 app.use(sassMiddleware({
     src: path.join(__dirname,'./assets/scss'),
@@ -35,7 +37,7 @@ app.use(sassMiddleware({
   app.set('views',path.join(__dirname,'views'))
 
 //middleware for excessing static's
-  app.use(express.static('./assets'))
+  app.use(express.static(env.assetPath))
 
   app.use(expressEjsLayouts)
 // extract style and scripts from sub pages into the layout

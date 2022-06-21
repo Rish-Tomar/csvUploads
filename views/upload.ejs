@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" href="/css/upload.css">
+<link rel="stylesheet" href="<%= assetPath('css/upload.css') %>">
 <div id="upload-outer-div">
     <div id="innerdiv">
         <form action="/upload/file/?id=<%=user.id%>" method="post" enctype="multipart/form-data">
@@ -12,5 +12,5 @@
             <input type="submit" value="Submit" onclick="fileValidator()">
         </form>
     </div>
-<script src="/js/upload.js"></script>
+<script src="<%= assetPath('js/upload.js') %>"></script>
 </div>

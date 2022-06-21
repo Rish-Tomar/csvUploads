@@ -6,7 +6,11 @@ function searchHandler(data){
     // alert(option);
     console.log('hellow',option,inputText)
     console.log(typeof(data),data)
-
+    
+    if(option=='default'){
+        alert('select Attribute ')
+        return
+    }
     var showRecords =[]
 
     $.ajax({
@@ -32,12 +36,12 @@ function searchHandler(data){
 
 function newFileDataDisplay(data,searchText,option){
     const keys     = Object.keys(data[0])
-    console.log(keys)
     var resultvar = data.filter( (d) =>{
         if(d[option] == searchText){
             return d;
         }
     })    
+    console.log('resultCar from newfiledatafilter',resultvar)
     // if(resultvar.length==0){
     //     alert('Your entered record is not found')
     // }
