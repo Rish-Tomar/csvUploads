@@ -1,5 +1,8 @@
 const csvDatabase = require('../models/csvfile')
 const User = require('../models/user')
+const path = require('path')
+const fs = require('fs')
+
 module.exports.upload=(req,res)=>{
     return res.render('upload',{
         title:'Upload csv',
@@ -15,6 +18,8 @@ module.exports.uploadFile =(req,res)=>{
         if(req.file.mimetype !== 'text/csv')
         {
             console.log('unsupported file type')
+            fs.unlinkSync(path.join(csvDatabase.filePath+"/"+req.file.filename))
+            req.flash('error','Unsupported file format, use .csv')
             return res.redirect('back')
         }
         console.log(csvDatabase.filePath+"/"+req.file.filename)

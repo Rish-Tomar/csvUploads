@@ -12,6 +12,9 @@ const passportLocal =require('./config/passport_local_strategy')
 const MongoStore = require('connect-mongo')
 const env=require('./config/environment')
 const PORT = env.PORT || 8000
+
+const Flash =require('connect-flash')
+const flashMiddleware = require('./config/flashMiddleware')
 /*<- MIDDLEWARES ->*/
 
 //using express an an app
@@ -67,6 +70,9 @@ app.use(sassMiddleware({
 //middleware for saving the users information in cookies
   app.use(passport.setAuthenticatedUser)
 
+//using connect-flash  
+  app.use(Flash())
+  app.use(flashMiddleware.setFlash)
 
 //middleware for using routes
   app.use('/',require('./routes'))

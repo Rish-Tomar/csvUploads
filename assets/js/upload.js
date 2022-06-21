@@ -5,8 +5,7 @@ function fileValidator(data){
                     /(\.csv)$/i;
 
     if(!allowedExtensions.exec(filePath)){
-        alert('Invalid File Type ');
-        fileInput.value ='';
+        alert('Invalid File Type, use ".csv"');
         return false
     }
     

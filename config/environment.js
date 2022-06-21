@@ -15,4 +15,4 @@ const production = {
     DB:process.env.DB,
 }
 
-module.exports = eval(process.env.PROJECT_ENVIRRONMENT) == undefined ? development : eval(process.env.PROJECT_ENVIRRONMENT);
+module.exports = eval(process.env.PROJECT_ENVIRONMENT) == undefined ? development : eval(process.env.PROJECT_ENVIRONMENT);

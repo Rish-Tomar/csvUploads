@@ -10,6 +10,7 @@
   "author": "RT",
   "license": "ISC",
   "dependencies": {
+    "connect-flash": "^0.1.1",
     "connect-mongo": "^4.6.0",
     "csv-parser": "^3.0.0",
     "csvtojson": "^2.0.10",
