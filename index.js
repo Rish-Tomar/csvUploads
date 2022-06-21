@@ -23,13 +23,15 @@ const app= express()
 //middleware to insert asssetpath function from helper function inside config
   require('./config/views_assets_helper')(app)
 //sass middleware 
-app.use(sassMiddleware({
+if(env.name==='development'){
+  app.use(sassMiddleware({
     src: path.join(__dirname,'./assets/scss'),
     dest: path.join(__dirname,'./assets/css'),
     debug: true,
     outputStyle: 'extended',
     prefix: '/css'
 }))
+}
 //middleware for url requests and sessions
   app.use(express.urlencoded({extended: false}))
 //middlewares for ejs views
