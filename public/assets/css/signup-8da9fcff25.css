@@ -1,0 +1,33 @@
+#sign-up-div {
+  background-color: #cacfc3;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 30px;
+  width: 25%;
+  text-align: center; }
+  #sign-up-div #user_sign_up {
+    margin: auto;
+    display: flex;
+    flex-direction: column; }
+    #sign-up-div #user_sign_up #user_sign_up_form {
+      padding: 5%;
+      display: flex;
+      flex-direction: column; }
+      #sign-up-div #user_sign_up #user_sign_up_form input {
+        margin: 3px;
+        border: none;
+        height: 30px;
+        padding: 5px;
+        border-bottom: 1px solid black;
+        background-color: #dee4eb;
+        color: black; }
+      #sign-up-div #user_sign_up #user_sign_up_form #submit-btn {
+        margin: auto;
+        margin-top: 20px;
+        background-color: #e4ac45;
+        height: 30px;
+        border-radius: 5px;
+        border: none;
+        width: 40%; }
+      #sign-up-div #user_sign_up #user_sign_up_form #submit-btn:hover {
+        background-color: #45a4e4; }

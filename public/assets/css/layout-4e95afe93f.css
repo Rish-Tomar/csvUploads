@@ -1,0 +1,5 @@
+body {
+  background-color: rgba(204, 231, 231, 0.801); }
+  body main {
+    height: 100%;
+    overflow: auto; }

@@ -15,7 +15,7 @@
                     <td><%= data.user.name %></td>
                     <td><%= data.typeofdata %></td>
                     <% if((locals.user) && (locals.user.id == data.user.id)) { %>
-                    <td><a href="/csvdetails/?fileid=<%=data.id%>">Open File</a></td>
+                    <td><a href="/csvdetails/?fileid=<%=data.id%>">Open File</a> &nbsp;&nbsp;/&nbsp;&nbsp; <a href="/csvdelete/?fileid=<%=data.id%>">Delete file</a></td>
                     <% } else{%>
                     <td> Unauthorised</td>
                     <% } %></5>

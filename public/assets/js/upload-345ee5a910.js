@@ -1,0 +1,1 @@
+function fileValidator(e){var l=document.getElementById("file").value;return!!/(\.csv)$/i.exec(l)||(alert('Invalid File Type, use ".csv"'),!1)}

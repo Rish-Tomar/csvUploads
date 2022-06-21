@@ -2,6 +2,8 @@ const csvDatabase = require('../models/csvfile')
 const fs = require('fs')
 const csv =require('csv-parser')
 const csvv =require('csvtojson')
+const path = require('path')
+
 var results = [];
 
 module.exports.home=async (req,res)=>{
@@ -43,4 +45,27 @@ module.exports.showCsvDetails = async (req,res)=>{
         fileid:csvfile.id
     })
 
+}
+
+
+module.exports.csvDelete = async(req,res)=>{
+    
+    try{
+        console.log(req.query.fileid)
+        const csvfile= await csvDatabase.findById(req.query.fileid)
+        const filepath = csvfile.file
+        const deleteFIle = await csvDatabase.findByIdAndDelete(req.query.fileid)
+
+        //unlink from folder
+        if(filepath){
+            fs.unlinkSync(path.join(__dirname,"..",filepath))
+        }
+
+        return res.redirect('back')
+
+    }catch(err){
+        if(err){
+            console.log('csv delete error',err);
+        }
+    }
 }

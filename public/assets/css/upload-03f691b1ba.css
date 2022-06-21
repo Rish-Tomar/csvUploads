@@ -1,0 +1,10 @@
+#upload-outer-div {
+  margin-top: 3%; }
+  #upload-outer-div #innerdiv {
+    display: flex;
+    justify-content: space-around; }
+    #upload-outer-div #innerdiv form {
+      display: flex;
+      flex-direction: column; }
+  #upload-outer-div #upload-form {
+    margin: auto; }

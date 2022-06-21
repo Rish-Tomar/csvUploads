@@ -1,0 +1,18 @@
+#outer-div {
+  margin-top: 1%;
+  display: flex;
+  justify-content: space-around; }
+  #outer-div #table #table-header {
+    background-color: aquamarine;
+    box-shadow: 2px 2px 2px 5px rgba(198, 228, 163, 0.425); }
+  #outer-div #table #table-body {
+    background-color: rgba(239, 248, 229, 0.425); }
+    #outer-div #table #table-body td {
+      border-right: 1px solid black;
+      border-left: 1px solid black;
+      border-bottom: 1px solid black;
+      text-align: center; }
+
+#search-box-div {
+  display: flex;
+  justify-content: space-around; }
